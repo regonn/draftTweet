@@ -16,8 +16,6 @@ class DraftTweetTableViewController: UITableViewController, UITableViewDataSourc
         println("start")
         super.viewDidLoad()
 
-        self.tableView.registerClass(CustomTableViewCell.classForCoder(), forCellReuseIdentifier: "CustomTableViewCell")
-
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -47,16 +45,18 @@ class DraftTweetTableViewController: UITableViewController, UITableViewDataSourc
 
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("CustomTableViewCell", forIndexPath: indexPath) as CustomTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("ListPrototypeCell", forIndexPath: indexPath) as CustomTableViewCell
         var tweets = self.tweetModel.all()
 
         var tweet = tweets.objectAtIndex(indexPath.row) as Tweet
-        if var label = cell.tweetContent{
+        if var label = cell.tweetContentLabel{
             label.text = tweet.content
         }
-        // cell.tweetContent!.text = tweet.content as String
+        cell.copyButton.addTarget(cell, action: "buttonTappedOnCell", forControlEvents: UIControlEvents.TouchDown)
         return cell
     }
+    
+
 
 
     /*

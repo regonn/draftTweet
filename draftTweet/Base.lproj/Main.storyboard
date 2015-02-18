@@ -90,8 +90,8 @@
                                     <accessibilityTraits key="traits" none="YES" button="YES"/>
                                 </accessibility>
                                 <connections>
-                                    <outlet property="CopyButton" destination="xdl-Vv-dhu" id="SsL-0I-FsO"/>
-                                    <outlet property="tweetContent" destination="cfm-jz-UCt" id="2El-H5-nGz"/>
+                                    <outlet property="copyButton" destination="xdl-Vv-dhu" id="uQ6-6q-RaD"/>
+                                    <outlet property="tweetContentLabel" destination="cfm-jz-UCt" id="2mw-fj-oVZ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

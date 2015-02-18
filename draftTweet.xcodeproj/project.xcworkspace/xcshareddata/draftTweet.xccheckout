@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>1851DEFF-9EDC-44A6-9A2D-BC84285CA31C</string>
+	<key>IDESourceControlProjectName</key>
+	<string>draftTweet</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>231371AA775B93858679AA2C84B5042F7585D72F</key>
+		<string>github.com:regonn/draftTweet.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>draftTweet.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>231371AA775B93858679AA2C84B5042F7585D72F</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:regonn/draftTweet.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>231371AA775B93858679AA2C84B5042F7585D72F</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>231371AA775B93858679AA2C84B5042F7585D72F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>draftTweet</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -23,7 +23,7 @@ class DraftTweetViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         self.inputTextField.delegate = self
         self.inputTextField.placeholder = "Please input"
-        self.stringCounterLabel.text = "0"
+        self.stringCounterLabel.text = "140"
 
         // Do any additional setup after loading the view.
     }
@@ -41,7 +41,7 @@ class DraftTweetViewController: UIViewController, UITextFieldDelegate {
         var str = textField.text + string
 
         // 文字数がmaxLength以下ならtrueを返す.
-        self.stringCounterLabel.text = "\(countElements(str))"
+        self.stringCounterLabel.text = "\(140 - countElements(str))"
         return true
     }
 

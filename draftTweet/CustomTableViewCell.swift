@@ -10,16 +10,12 @@ import UIKit
 
 class CustomTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var tweetContent: UILabel!
+    
+    @IBOutlet weak var tweetContentLabel: UILabel!
 
     @IBOutlet weak var copyButton: UIButton!
-
-    required init(coder aDecoder: NSCoder!) {
-        super.init(coder: aDecoder)
+    
+    func buttonTappedOnCell() {
+        UIPasteboard.generalPasteboard().string = self.tweetContentLabel.text
     }
-
-    override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
-        super.init(style: UITableViewCellStyle.Value1, reuseIdentifier: reuseIdentifier)
-    }
-
 }
