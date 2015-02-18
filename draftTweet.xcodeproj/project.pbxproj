@@ -13,6 +13,13 @@
 		44F5AA7D1A94550F002845F3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44F5AA7C1A94550F002845F3 /* Images.xcassets */; };
 		44F5AA801A94550F002845F3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44F5AA7E1A94550F002845F3 /* LaunchScreen.xib */; };
 		44F5AA8C1A94550F002845F3 /* draftTweetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F5AA8B1A94550F002845F3 /* draftTweetTests.swift */; };
+		44F5AA961A945633002845F3 /* tweetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F5AA951A945633002845F3 /* tweetModel.swift */; };
+		44F5AA981A9456E0002845F3 /* SwiftData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F5AA971A9456E0002845F3 /* SwiftData.swift */; };
+		44F5AA9B1A94593E002845F3 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 44F5AA9A1A94593E002845F3 /* libsqlite3.dylib */; };
+		44F5AA9F1A945B3C002845F3 /* DraftTweetTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F5AA9E1A945B3C002845F3 /* DraftTweetTableViewController.swift */; };
+		44F5AAA11A945C11002845F3 /* DraftTweetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F5AAA01A945C11002845F3 /* DraftTweetViewController.swift */; };
+		44F5AAA31A946EC2002845F3 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F5AAA21A946EC2002845F3 /* Tweet.swift */; };
+		44F5AAAB1A9491E4002845F3 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F5AAAA1A9491E4002845F3 /* CustomTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +43,14 @@
 		44F5AA851A94550F002845F3 /* draftTweetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = draftTweetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		44F5AA8A1A94550F002845F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44F5AA8B1A94550F002845F3 /* draftTweetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = draftTweetTests.swift; sourceTree = "<group>"; };
+		44F5AA951A945633002845F3 /* tweetModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tweetModel.swift; sourceTree = "<group>"; };
+		44F5AA971A9456E0002845F3 /* SwiftData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftData.swift; sourceTree = "<group>"; };
+		44F5AA991A94586A002845F3 /* Briding-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Briding-Header.h"; sourceTree = "<group>"; };
+		44F5AA9A1A94593E002845F3 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		44F5AA9E1A945B3C002845F3 /* DraftTweetTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraftTweetTableViewController.swift; sourceTree = "<group>"; };
+		44F5AAA01A945C11002845F3 /* DraftTweetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraftTweetViewController.swift; sourceTree = "<group>"; };
+		44F5AAA21A946EC2002845F3 /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
+		44F5AAAA1A9491E4002845F3 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44F5AA9B1A94593E002845F3 /* libsqlite3.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +75,9 @@
 		44F5AA671A94550F002845F3 = {
 			isa = PBXGroup;
 			children = (
+				44F5AA9A1A94593E002845F3 /* libsqlite3.dylib */,
+				44F5AA971A9456E0002845F3 /* SwiftData.swift */,
+				44F5AA991A94586A002845F3 /* Briding-Header.h */,
 				44F5AA721A94550F002845F3 /* draftTweet */,
 				44F5AA881A94550F002845F3 /* draftTweetTests */,
 				44F5AA711A94550F002845F3 /* Products */,
@@ -79,10 +98,15 @@
 			children = (
 				44F5AA751A94550F002845F3 /* AppDelegate.swift */,
 				44F5AA771A94550F002845F3 /* ViewController.swift */,
+				44F5AA9E1A945B3C002845F3 /* DraftTweetTableViewController.swift */,
+				44F5AAA01A945C11002845F3 /* DraftTweetViewController.swift */,
+				44F5AAAA1A9491E4002845F3 /* CustomTableViewCell.swift */,
 				44F5AA791A94550F002845F3 /* Main.storyboard */,
 				44F5AA7C1A94550F002845F3 /* Images.xcassets */,
 				44F5AA7E1A94550F002845F3 /* LaunchScreen.xib */,
 				44F5AA731A94550F002845F3 /* Supporting Files */,
+				44F5AA951A945633002845F3 /* tweetModel.swift */,
+				44F5AAA21A946EC2002845F3 /* Tweet.swift */,
 			);
 			path = draftTweet;
 			sourceTree = "<group>";
@@ -212,7 +236,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44F5AAA11A945C11002845F3 /* DraftTweetViewController.swift in Sources */,
 				44F5AA781A94550F002845F3 /* ViewController.swift in Sources */,
+				44F5AAAB1A9491E4002845F3 /* CustomTableViewCell.swift in Sources */,
+				44F5AA9F1A945B3C002845F3 /* DraftTweetTableViewController.swift in Sources */,
+				44F5AAA31A946EC2002845F3 /* Tweet.swift in Sources */,
+				44F5AA981A9456E0002845F3 /* SwiftData.swift in Sources */,
+				44F5AA961A945633002845F3 /* tweetModel.swift in Sources */,
 				44F5AA761A94550F002845F3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -339,6 +369,7 @@
 				INFOPLIST_FILE = draftTweet/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Briding-Header.h";
 			};
 			name = Debug;
 		};
@@ -349,6 +380,7 @@
 				INFOPLIST_FILE = draftTweet/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Briding-Header.h";
 			};
 			name = Release;
 		};
@@ -405,6 +437,7 @@
 				44F5AA911A94550F002845F3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		44F5AA921A94550F002845F3 /* Build configuration list for PBXNativeTarget "draftTweetTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +446,7 @@
 				44F5AA941A94550F002845F3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
