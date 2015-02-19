@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44E50BA81A9629840090F25D /* Icon-60.png in Resources */ = {isa = PBXBuildFile; fileRef = 44E50BA11A9629840090F25D /* Icon-60.png */; };
+		44E50BA91A9629840090F25D /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 44E50BA21A9629840090F25D /* Icon-72.png */; };
+		44E50BAA1A9629840090F25D /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44E50BA31A9629840090F25D /* Icon-72@2x.png */; };
+		44E50BAB1A9629840090F25D /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 44E50BA41A9629840090F25D /* Icon-Small-50.png */; };
+		44E50BAC1A9629840090F25D /* Icon-Small-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44E50BA51A9629840090F25D /* Icon-Small-50@2x.png */; };
+		44E50BAD1A9629840090F25D /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 44E50BA61A9629840090F25D /* Icon.png */; };
+		44E50BAE1A9629840090F25D /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44E50BA71A9629840090F25D /* Icon@2x.png */; };
 		44F5AA761A94550F002845F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F5AA751A94550F002845F3 /* AppDelegate.swift */; };
 		44F5AA781A94550F002845F3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F5AA771A94550F002845F3 /* ViewController.swift */; };
 		44F5AA7B1A94550F002845F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44F5AA791A94550F002845F3 /* Main.storyboard */; };
@@ -33,6 +40,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		44E50BA11A9629840090F25D /* Icon-60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60.png"; sourceTree = "<group>"; };
+		44E50BA21A9629840090F25D /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
+		44E50BA31A9629840090F25D /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
+		44E50BA41A9629840090F25D /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
+		44E50BA51A9629840090F25D /* Icon-Small-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50@2x.png"; sourceTree = "<group>"; };
+		44E50BA61A9629840090F25D /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		44E50BA71A9629840090F25D /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		44F5AA701A94550F002845F3 /* draftTweet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = draftTweet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44F5AA741A94550F002845F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44F5AA751A94550F002845F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -72,9 +86,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		44E50BA01A9629840090F25D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				44E50BA11A9629840090F25D /* Icon-60.png */,
+				44E50BA21A9629840090F25D /* Icon-72.png */,
+				44E50BA31A9629840090F25D /* Icon-72@2x.png */,
+				44E50BA41A9629840090F25D /* Icon-Small-50.png */,
+				44E50BA51A9629840090F25D /* Icon-Small-50@2x.png */,
+				44E50BA61A9629840090F25D /* Icon.png */,
+				44E50BA71A9629840090F25D /* Icon@2x.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		44F5AA671A94550F002845F3 = {
 			isa = PBXGroup;
 			children = (
+				44E50BA01A9629840090F25D /* Resources */,
 				44F5AA9A1A94593E002845F3 /* libsqlite3.dylib */,
 				44F5AA971A9456E0002845F3 /* SwiftData.swift */,
 				44F5AA991A94586A002845F3 /* Briding-Header.h */,
@@ -216,9 +245,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44E50BAD1A9629840090F25D /* Icon.png in Resources */,
 				44F5AA7B1A94550F002845F3 /* Main.storyboard in Resources */,
+				44E50BAB1A9629840090F25D /* Icon-Small-50.png in Resources */,
+				44E50BAC1A9629840090F25D /* Icon-Small-50@2x.png in Resources */,
+				44E50BA91A9629840090F25D /* Icon-72.png in Resources */,
+				44E50BAA1A9629840090F25D /* Icon-72@2x.png in Resources */,
 				44F5AA801A94550F002845F3 /* LaunchScreen.xib in Resources */,
+				44E50BA81A9629840090F25D /* Icon-60.png in Resources */,
 				44F5AA7D1A94550F002845F3 /* Images.xcassets in Resources */,
+				44E50BAE1A9629840090F25D /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
