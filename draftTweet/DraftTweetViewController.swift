@@ -41,22 +41,15 @@ class DraftTweetViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
 
-    func textField(textField: UITextField!, shouldChangeCharactersInRange range: NSRange, replacementString string: String!) -> Bool {
-
-
-        // 入力済みの文字と入力された文字を合わせて取得.
-        var str = textField.text + string
-        //TODO: end editting イベントを拾う
-
-        self.stringCounterLabel.text = "\(140 - countElements(str))"
-        return true
-    }
-
-
-
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
+    @IBAction func editChange(sender: AnyObject) {
+        var str = self.inputTextField.text
+        self.stringCounterLabel.text = "\(140 - countElements(str))"
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if sender as? UIBarButtonItem != self.saveButton {
             return

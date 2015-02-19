@@ -12,6 +12,8 @@ class CustomTableViewCell: UITableViewCell {
 
     let tweetModel = TweetModel()
     
+    var tableView = UITableView()
+    
     @IBOutlet weak var tweetContentLabel: UILabel!
 
     @IBOutlet weak var copyButton: UIButton!
@@ -22,6 +24,17 @@ class CustomTableViewCell: UITableViewCell {
     @IBOutlet weak var deleteButton: UIButton!
     
     @IBOutlet weak var idNumberLabel: UILabel!
+    
+    let alert:UIAlertController = UIAlertController(title:"alert",
+        message: "alertView",
+        preferredStyle: UIAlertControllerStyle.Alert)
+    
+    let defaultAction:UIAlertAction = UIAlertAction(title: "Default",
+        style: UIAlertActionStyle.Default,
+        handler:{
+            (action:UIAlertAction!) -> Void in
+            println("Default")
+    })
     
     func copyButtonTappedOnCell() {
         UIPasteboard.generalPasteboard().string = self.tweetContentLabel.text

@@ -16,9 +16,12 @@ class DraftTweetTableViewController: UITableViewController, UITableViewDataSourc
     let tweetModel = TweetModel()
     var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
 
+
+    
     override func viewDidLoad() {
         println("start")
         super.viewDidLoad()
+        self.tableView.rowHeight = 100
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -26,6 +29,7 @@ class DraftTweetTableViewController: UITableViewController, UITableViewDataSourc
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -60,9 +64,19 @@ class DraftTweetTableViewController: UITableViewController, UITableViewDataSourc
             idLabel.text = "\(tweet.id)"
         }
         cell.copyButton.addTarget(cell, action: "copyButtonTappedOnCell", forControlEvents: UIControlEvents.TouchDown)
+        cell.copyButton.addTarget(self, action: "showAlert", forControlEvents: UIControlEvents.TouchDown)
         cell.editButton.addTarget(cell, action: "editButtonTappedOnCell", forControlEvents: UIControlEvents.TouchDown)
         cell.deleteButton.addTarget(cell, action: "deleteButtonTappedOnCell", forControlEvents: UIControlEvents.TouchDown)
         return cell
+    }
+    
+    func showAlert(){
+        let alertController = UIAlertController(title: "", message: "Copied!", preferredStyle: .Alert)
+        
+        let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        alertController.addAction(defaultAction)
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
     }
     
 
@@ -123,4 +137,6 @@ class DraftTweetTableViewController: UITableViewController, UITableViewDataSourc
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
+    
+    
 }
