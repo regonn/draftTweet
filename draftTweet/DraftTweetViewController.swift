@@ -18,13 +18,19 @@ class DraftTweetViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var cancelButton: UIBarButtonItem!
 
     var tweetModel = TweetModel()
+    var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+
         self.inputTextField.delegate = self
         self.inputTextField.placeholder = "Please input"
-        var tweetContent:String = appDelegate.tweetContent!
+        var tweetContent:String = ""
+        var tweetId:String = ""
+        if appDelegate.editMode == true{
+            tweetContent = appDelegate.tweetContent!
+            tweetId = appDelegate.idNumber!
+        }
         self.inputTextField.text = tweetContent
         self.stringCounterLabel.text = "\(140 - countElements(tweetContent))"
         // Do any additional setup after loading the view.
@@ -37,12 +43,11 @@ class DraftTweetViewController: UIViewController, UITextFieldDelegate {
 
     func textField(textField: UITextField!, shouldChangeCharactersInRange range: NSRange, replacementString string: String!) -> Bool {
 
-        // 文字数最大を決める.
 
         // 入力済みの文字と入力された文字を合わせて取得.
         var str = textField.text + string
+        //TODO: end editting イベントを拾う
 
-        // 文字数がmaxLength以下ならtrueを返す.
         self.stringCounterLabel.text = "\(140 - countElements(str))"
         return true
     }
@@ -53,11 +58,15 @@ class DraftTweetViewController: UIViewController, UITextFieldDelegate {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if sender as UIBarButtonItem != self.saveButton {
+        if sender as? UIBarButtonItem != self.saveButton {
             return
         }
         if countElements(self.inputTextField.text) > 0 {
-            tweetModel.add(self.inputTextField.text)
+            if appDelegate.editMode == true{
+                tweetModel.update(appDelegate.idNumber!, content: self.inputTextField.text!)
+            }else{
+                tweetModel.add(self.inputTextField.text)
+            }
         }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.

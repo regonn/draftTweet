@@ -10,7 +10,11 @@ import UIKit
 
 class DraftTweetTableViewController: UITableViewController, UITableViewDataSource {
 
+    
+    @IBOutlet weak var addButton: UIBarButtonItem!
+
     let tweetModel = TweetModel()
+    var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
 
     override func viewDidLoad() {
         println("start")
@@ -52,8 +56,12 @@ class DraftTweetTableViewController: UITableViewController, UITableViewDataSourc
         if var label = cell.tweetContentLabel{
             label.text = tweet.content
         }
+        if var idLabel = cell.idNumberLabel{
+            idLabel.text = "\(tweet.id)"
+        }
         cell.copyButton.addTarget(cell, action: "copyButtonTappedOnCell", forControlEvents: UIControlEvents.TouchDown)
         cell.editButton.addTarget(cell, action: "editButtonTappedOnCell", forControlEvents: UIControlEvents.TouchDown)
+        cell.deleteButton.addTarget(cell, action: "deleteButtonTappedOnCell", forControlEvents: UIControlEvents.TouchDown)
         return cell
     }
     
@@ -105,5 +113,14 @@ class DraftTweetTableViewController: UITableViewController, UITableViewDataSourc
 
     @IBAction func unwindToList(segue: UIStoryboardSegue) {
         self.tableView.reloadData()
+    }
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if sender as? UIBarButtonItem != self.addButton {
+            return
+        }
+        appDelegate.editMode = false
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
     }
 }

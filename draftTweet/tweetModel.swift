@@ -31,6 +31,19 @@ class TweetModel {
         }
     }
 
+    func update(id: String, content: String){
+        if let err = SD.executeChange("UPDATE ? SET content = ? WHERE ID = ?", withArgs: [tableName, content, id]){
+        }else{
+
+        }
+    }
+
+    func delete(id: String){
+        if let err = SD.executeChange("DELETE FROM ? WHERE ID = ?", withArgs: [tableName, id]){
+        }else{
+        }
+    }
+
     func all() -> NSMutableArray {
         var tweets = NSMutableArray()
         let (resultSet, err) = SD.executeQuery("SELECT * FROM ? ORDER BY ID DESC", withArgs: [tableName])

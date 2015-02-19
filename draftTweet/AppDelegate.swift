@@ -12,6 +12,8 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var tweetContent:String?
+    var editMode:Bool?
+    var idNumber:String?
 
     var window: UIWindow?
 
