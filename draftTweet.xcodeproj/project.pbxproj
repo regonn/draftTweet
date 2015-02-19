@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44242F151A9699A6008CDDA6 /* copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 44242F141A9699A6008CDDA6 /* copy.png */; };
+		44242F171A9699B4008CDDA6 /* edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 44242F161A9699B4008CDDA6 /* edit.png */; };
 		44E50BA81A9629840090F25D /* Icon-60.png in Resources */ = {isa = PBXBuildFile; fileRef = 44E50BA11A9629840090F25D /* Icon-60.png */; };
 		44E50BA91A9629840090F25D /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 44E50BA21A9629840090F25D /* Icon-72.png */; };
 		44E50BAA1A9629840090F25D /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44E50BA31A9629840090F25D /* Icon-72@2x.png */; };
@@ -40,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		44242F141A9699A6008CDDA6 /* copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = copy.png; path = Resources/copy.png; sourceTree = SOURCE_ROOT; };
+		44242F161A9699B4008CDDA6 /* edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = edit.png; path = Resources/edit.png; sourceTree = SOURCE_ROOT; };
 		44E50BA11A9629840090F25D /* Icon-60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60.png"; sourceTree = "<group>"; };
 		44E50BA21A9629840090F25D /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
 		44E50BA31A9629840090F25D /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
@@ -93,6 +97,8 @@
 				44E50BA21A9629840090F25D /* Icon-72.png */,
 				44E50BA31A9629840090F25D /* Icon-72@2x.png */,
 				44E50BA41A9629840090F25D /* Icon-Small-50.png */,
+				44242F141A9699A6008CDDA6 /* copy.png */,
+				44242F161A9699B4008CDDA6 /* edit.png */,
 				44E50BA51A9629840090F25D /* Icon-Small-50@2x.png */,
 				44E50BA61A9629840090F25D /* Icon.png */,
 				44E50BA71A9629840090F25D /* Icon@2x.png */,
@@ -250,11 +256,13 @@
 				44E50BAB1A9629840090F25D /* Icon-Small-50.png in Resources */,
 				44E50BAC1A9629840090F25D /* Icon-Small-50@2x.png in Resources */,
 				44E50BA91A9629840090F25D /* Icon-72.png in Resources */,
+				44242F171A9699B4008CDDA6 /* edit.png in Resources */,
 				44E50BAA1A9629840090F25D /* Icon-72@2x.png in Resources */,
 				44F5AA801A94550F002845F3 /* LaunchScreen.xib in Resources */,
 				44E50BA81A9629840090F25D /* Icon-60.png in Resources */,
 				44F5AA7D1A94550F002845F3 /* Images.xcassets in Resources */,
 				44E50BAE1A9629840090F25D /* Icon@2x.png in Resources */,
+				44242F151A9699A6008CDDA6 /* copy.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

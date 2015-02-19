@@ -10,12 +10,16 @@ import Foundation
 
 class TweetModel {
     var tableName = "tweets"
+
+    let dateFormatter = NSDateFormatter()
+
+
     
     init() {
         let (tb, err) = SD.existingTables()
         if !contains(tb, tableName) {
             if let err =
-                SD.createTable(tableName, withColumnNamesAndTypes: [ "content": .StringVal]){
+                SD.createTable(tableName, withColumnNamesAndTypes: [ "Content": .StringVal, "UpdatedAt": .StringVal]){
 
             } else {
 
@@ -24,15 +28,23 @@ class TweetModel {
     println(SD.databasePath())
     }
 
+    func dateTimeNow() -> NSString {
+        let now = NSDate()
+        dateFormatter.dateFormat = "yyyy/MM/dd HH:mm:ss"
+        return dateFormatter.stringFromDate(NSDate())
+    }
+
     func add(content: String){
-        if let err = SD.executeChange("INSERT INTO ? (content) VALUES(?)", withArgs: [tableName, content]){
+        if let err = SD.executeChange("INSERT INTO ? (Content, UpdatedAt) VALUES(?, ?)", withArgs: [tableName, content, dateTimeNow()]){
         } else {
             println(content)
         }
     }
 
     func update(id: String, content: String){
-        if let err = SD.executeChange("UPDATE ? SET content = ? WHERE ID = ?", withArgs: [tableName, content, id]){
+        println("UPDATE ID:\(id) CONTENT:\(content)")
+        if let err = SD.executeChange("UPDATE ? SET Content = ?, UpdatedAt = ? WHERE ID = ?", withArgs: [tableName, content, dateTimeNow(), id]){
+            println(err)
         }else{
 
         }
@@ -46,13 +58,16 @@ class TweetModel {
 
     func all() -> NSMutableArray {
         var tweets = NSMutableArray()
-        let (resultSet, err) = SD.executeQuery("SELECT * FROM ? ORDER BY ID DESC", withArgs: [tableName])
+        let (resultSet, err) = SD.executeQuery("SELECT * FROM ? ORDER BY UpdatedAt DESC", withArgs: [tableName])
         if err != nil {
+            println(err)
         } else {
             for row in resultSet {
                 if let id = row["ID"]?.asInt() {
                     var tweet :Tweet? = Tweet()
-                    var content = row["content"]?.asString()
+                    var content = row["Content"]?.asString()
+                    var upDatedAt = row["UpdatedAt"]?.asString()
+                    println("show ID:\(id) CONTENT:\(content) UPDATEDAT:\(upDatedAt)")
                     tweet!.content = content!
                     tweet!.id = id
                     tweets.addObject(tweet!)
