@@ -21,10 +21,12 @@ class DraftTweetViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
         self.inputTextField.delegate = self
         self.inputTextField.placeholder = "Please input"
-        self.stringCounterLabel.text = "140"
-
+        var tweetContent:String = appDelegate.tweetContent!
+        self.inputTextField.text = tweetContent
+        self.stringCounterLabel.text = "\(140 - countElements(tweetContent))"
         // Do any additional setup after loading the view.
     }
 

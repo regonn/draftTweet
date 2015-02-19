@@ -15,7 +15,16 @@ class CustomTableViewCell: UITableViewCell {
 
     @IBOutlet weak var copyButton: UIButton!
     
-    func buttonTappedOnCell() {
+    
+    @IBOutlet weak var editButton: UIButton!
+    
+    
+    func copyButtonTappedOnCell() {
         UIPasteboard.generalPasteboard().string = self.tweetContentLabel.text
+    }
+    
+    func editButtonTappedOnCell() {
+        var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        appDelegate.tweetContent = self.tweetContentLabel.text
     }
 }

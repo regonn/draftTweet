@@ -52,12 +52,11 @@ class DraftTweetTableViewController: UITableViewController, UITableViewDataSourc
         if var label = cell.tweetContentLabel{
             label.text = tweet.content
         }
-        cell.copyButton.addTarget(cell, action: "buttonTappedOnCell", forControlEvents: UIControlEvents.TouchDown)
+        cell.copyButton.addTarget(cell, action: "copyButtonTappedOnCell", forControlEvents: UIControlEvents.TouchDown)
+        cell.editButton.addTarget(cell, action: "editButtonTappedOnCell", forControlEvents: UIControlEvents.TouchDown)
         return cell
     }
     
-
-
 
     /*
     // Override to support conditional editing of the table view.

@@ -56,7 +56,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
                 <exit id="lhW-Kx-1jg" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2804" y="511"/>
+            <point key="canvasLocation" x="1937" y="513"/>
         </scene>
         <!--Draft Tweet Table View Controller-->
         <scene sceneID="sfq-Ef-M67">
@@ -84,6 +84,15 @@
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                         </button>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oAT-QN-sdW">
+                                            <rect key="frame" x="139" y="8" width="46" height="30"/>
+                                            <state key="normal" title="Edit">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <segue destination="EVt-Uf-c8X" kind="show" id="eCj-dX-hud"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <accessibility key="accessibilityConfiguration">
@@ -91,6 +100,7 @@
                                 </accessibility>
                                 <connections>
                                     <outlet property="copyButton" destination="xdl-Vv-dhu" id="uQ6-6q-RaD"/>
+                                    <outlet property="editButton" destination="oAT-QN-sdW" id="qkY-1n-5fQ"/>
                                     <outlet property="tweetContentLabel" destination="cfm-jz-UCt" id="2mw-fj-oVZ"/>
                                 </connections>
                             </tableViewCell>
@@ -104,14 +114,14 @@
                     <navigationItem key="navigationItem" id="n7b-09-X68">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="92u-ui-0DU">
                             <connections>
-                                <segue destination="EVt-Uf-c8X" kind="show" id="247-VK-T8L"/>
+                                <segue destination="EVt-Uf-c8X" kind="show" identifier="new" id="247-VK-T8L"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7BP-Ob-vdv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1018" y="527"/>
+            <point key="canvasLocation" x="919" y="382"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1Da-Xu-xCh">
@@ -147,7 +157,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JJM-YA-kIc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1779" y="527"/>
+            <point key="canvasLocation" x="1717" y="373"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="eCj-dX-hud"/>
+    </inferredMetricsTieBreakers>
 </document>
