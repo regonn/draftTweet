@@ -20,7 +20,7 @@ class DraftTweetTableViewController: UITableViewController, UITableViewDataSourc
     override func viewDidLoad() {
         println("start")
         super.viewDidLoad()
-        self.tableView.rowHeight = 150
+        self.tableView.rowHeight = 130
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -62,13 +62,10 @@ class DraftTweetTableViewController: UITableViewController, UITableViewDataSourc
         if var idLabel = cell.idNumberLabel{
             idLabel.text = "\(tweet.id)"
         }
-        cell.copyButton.addTarget(cell, action: "copyButtonTappedOnCell", forControlEvents: UIControlEvents.TouchDown)
-        cell.copyButton.addTarget(self, action: "showAlert", forControlEvents: UIControlEvents.TouchDown)
-        cell.editButton.addTarget(cell, action: "editButtonTappedOnCell", forControlEvents: UIControlEvents.TouchDown)
         return cell
     }
     
-    func showAlert(){
+    func showCopyAlert(){
         let alertController = UIAlertController(title: "", message: "Copied!", preferredStyle: .Alert)
         
         let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
@@ -135,12 +132,35 @@ class DraftTweetTableViewController: UITableViewController, UITableViewDataSourc
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    
+
+    // 空だけど editActionsForRowAtIndexPathの起動に必要
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == UITableViewCellEditingStyle.Delete {
-            var cell = tableView.cellForRowAtIndexPath(indexPath) as CustomTableViewCell
+    }
+
+    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
+        var cell = tableView.cellForRowAtIndexPath(indexPath) as CustomTableViewCell
+        var deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Delete", handler: {
+            (action: UITableViewRowAction!, indexPath: NSIndexPath!) in
+            println("Triggered delete action \(action) atIndexPath: \(indexPath)")
             self.tweetModel.delete(cell.idNumberLabel.text!)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
-        }
+            return
+        })
+        var copyAction = UITableViewRowAction(style: UITableViewRowActionStyle.Normal, title: "Copy", handler: {
+            (action: UITableViewRowAction!, indexPath: NSIndexPath!) in
+            println("Triggered copy action \(action) atIndexPath: \(indexPath)")
+            UIPasteboard.generalPasteboard().string = cell.tweetContentLabel.text
+            self.showCopyAlert()
+            tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+            return
+        })
+        return [deleteAction, copyAction]
+    }
+
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        var cell = tableView.cellForRowAtIndexPath(indexPath) as CustomTableViewCell
+        appDelegate.tweetContent = cell.tweetContentLabel.text
+        appDelegate.editMode = true
+        appDelegate.idNumber = cell.idNumberLabel.text
     }
 }

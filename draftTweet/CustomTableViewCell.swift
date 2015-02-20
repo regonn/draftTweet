@@ -9,40 +9,6 @@
 import UIKit
 
 class CustomTableViewCell: UITableViewCell {
-
-    let tweetModel = TweetModel()
-    
-    var tableView = UITableView()
-    
     @IBOutlet weak var tweetContentLabel: UILabel!
-
-    @IBOutlet weak var copyButton: UIButton!
-    
-    
-    @IBOutlet weak var editButton: UIButton!
-    
-
     @IBOutlet weak var idNumberLabel: UILabel!
-    
-    let alert:UIAlertController = UIAlertController(title:"alert",
-        message: "alertView",
-        preferredStyle: UIAlertControllerStyle.Alert)
-    
-    let defaultAction:UIAlertAction = UIAlertAction(title: "Default",
-        style: UIAlertActionStyle.Default,
-        handler:{
-            (action:UIAlertAction!) -> Void in
-            println("Default")
-    })
-    
-    func copyButtonTappedOnCell() {
-        UIPasteboard.generalPasteboard().string = self.tweetContentLabel.text
-    }
-    
-    func editButtonTappedOnCell() {
-        var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
-        appDelegate.tweetContent = self.tweetContentLabel.text
-        appDelegate.editMode = true
-        appDelegate.idNumber = self.idNumberLabel.text
-    }
 }

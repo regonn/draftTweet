@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="YdW-r3-gBG">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Draft Tweet View Controller-->
@@ -16,39 +17,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WCM-Oh-ZUR">
-                                <rect key="frame" x="279" y="190" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" indicatorStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="CJd-Ah-bWW">
-                                <rect key="frame" x="150" y="225" width="300" height="150"/>
+                                <rect key="frame" x="16" y="14" width="568" height="586"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="WCL-eb-Oj1"/>
-                                    <constraint firstAttribute="height" constant="150" id="ZFg-Q5-8in"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="CJd-Ah-bWW" secondAttribute="centerY" id="7VH-bW-fhg"/>
-                            <constraint firstAttribute="centerX" secondItem="CJd-Ah-bWW" secondAttribute="centerX" id="EAj-9D-pbS"/>
-                            <constraint firstAttribute="centerX" secondItem="WCM-Oh-ZUR" secondAttribute="centerX" id="HV7-5i-cLc"/>
-                            <constraint firstAttribute="centerY" secondItem="WCM-Oh-ZUR" secondAttribute="centerY" constant="100" id="ZZ4-df-W7e"/>
-                            <constraint firstAttribute="centerY" secondItem="CJd-Ah-bWW" secondAttribute="centerY" id="jNC-1b-KtB"/>
-                            <constraint firstAttribute="centerX" secondItem="CJd-Ah-bWW" secondAttribute="centerX" id="vWr-Lp-yPj"/>
+                            <constraint firstItem="CJd-Ah-bWW" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="ANP-fL-qj1"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="CJd-Ah-bWW" secondAttribute="bottom" id="AbH-B0-jum"/>
+                            <constraint firstItem="CJd-Ah-bWW" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="-50" id="PUc-Pl-Xsx"/>
+                            <constraint firstItem="CJd-Ah-bWW" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="T2W-fB-hZn"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="QRB-XJ-6CZ">
+                        <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="VNS-cO-Pqp">
                             <connections>
                                 <segue destination="lhW-Kx-1jg" kind="unwind" unwindAction="unwindToList:" id="muK-1u-PtS"/>
                             </connections>
                         </barButtonItem>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="zvj-h7-Sqf">
+                            <rect key="frame" x="273" y="11" width="54" height="22"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="0">
+                                <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </state>
+                        </button>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="XSZ-0s-hVx">
                             <connections>
                                 <segue destination="lhW-Kx-1jg" kind="unwind" unwindAction="unwindToList:" id="vJP-s8-twQ"/>
@@ -57,15 +55,15 @@
                     </navigationItem>
                     <connections>
                         <outlet property="cancelButton" destination="VNS-cO-Pqp" id="F6M-tC-r3w"/>
+                        <outlet property="displayCounterButton" destination="zvj-h7-Sqf" id="JzT-eC-0Ju"/>
                         <outlet property="inputTextView" destination="CJd-Ah-bWW" id="9Is-dH-gTV"/>
                         <outlet property="saveButton" destination="XSZ-0s-hVx" id="2cM-H0-K1x"/>
-                        <outlet property="stringCounterLabel" destination="WCM-Oh-ZUR" id="LXL-Nw-oKv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
                 <exit id="lhW-Kx-1jg" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1937" y="513.5"/>
+            <point key="canvasLocation" x="2422" y="438"/>
         </scene>
         <!--Draft Tweet Table View Controller-->
         <scene sceneID="sfq-Ef-M67">
@@ -81,41 +79,35 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="caW-tX-P8K" id="lqA-er-grt">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oAT-QN-sdW">
-                                            <rect key="frame" x="297" y="3" width="35" height="35"/>
-                                            <state key="normal" title="Edit" image="edit.png">
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                            <connections>
-                                                <segue destination="EVt-Uf-c8X" kind="show" id="eCj-dX-hud"/>
-                                            </connections>
-                                        </button>
                                         <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3vz-mk-yc6">
                                             <rect key="frame" x="550" y="12" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfm-jz-UCt">
-                                            <rect key="frame" x="18" y="40" width="345" height="101"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfm-jz-UCt">
+                                            <rect key="frame" x="13" y="13" width="574" height="124"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdl-Vv-dhu">
-                                            <rect key="frame" x="234" y="3" width="35" height="35"/>
-                                            <state key="normal" title="Copy" image="copy.png"/>
-                                        </button>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="cfm-jz-UCt" firstAttribute="leading" secondItem="lqA-er-grt" secondAttribute="leadingMargin" constant="5" id="2qu-Z0-pgY"/>
+                                        <constraint firstItem="cfm-jz-UCt" firstAttribute="top" secondItem="lqA-er-grt" secondAttribute="topMargin" constant="5" id="XXz-Hc-reg"/>
+                                        <constraint firstAttribute="centerX" secondItem="cfm-jz-UCt" secondAttribute="centerX" id="gAc-ln-gVm"/>
+                                        <constraint firstAttribute="centerY" secondItem="cfm-jz-UCt" secondAttribute="centerY" id="gCO-hi-xFF"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="cfm-jz-UCt" secondAttribute="bottom" constant="5" id="ndu-bU-qm2"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="cfm-jz-UCt" secondAttribute="trailing" constant="5" id="rVU-Ko-tuT"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES" button="YES"/>
                                 </accessibility>
                                 <connections>
-                                    <outlet property="copyButton" destination="xdl-Vv-dhu" id="uQ6-6q-RaD"/>
-                                    <outlet property="editButton" destination="oAT-QN-sdW" id="qkY-1n-5fQ"/>
                                     <outlet property="idNumberLabel" destination="3vz-mk-yc6" id="FAc-81-N5y"/>
                                     <outlet property="tweetContentLabel" destination="cfm-jz-UCt" id="2mw-fj-oVZ"/>
+                                    <segue destination="EVt-Uf-c8X" kind="show" identifier="edit" id="WQf-o3-Le4"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -177,11 +169,7 @@
             <point key="canvasLocation" x="1717" y="373"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="copy.png" width="512" height="512"/>
-        <image name="edit.png" width="512" height="512"/>
-    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="eCj-dX-hud"/>
+        <segue reference="WQf-o3-Le4"/>
     </inferredMetricsTieBreakers>
 </document>

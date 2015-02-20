@@ -10,8 +10,8 @@ import UIKit
 
 class DraftTweetViewController: UIViewController, UITextViewDelegate , UITextFieldDelegate{
 
+    @IBOutlet weak var displayCounterButton: UIButton!
 
-    @IBOutlet weak var stringCounterLabel: UILabel!
     @IBOutlet weak var saveButton: UIBarButtonItem!
 
     @IBOutlet weak var cancelButton: UIBarButtonItem!
@@ -20,15 +20,14 @@ class DraftTweetViewController: UIViewController, UITextViewDelegate , UITextFie
 
     var tweetModel = TweetModel()
     var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+
+    func changeCounterValue(counterValue: String){
+        self.displayCounterButton.setTitle("\(140 - countElements(counterValue))", forState: .Normal)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        var ColorBlack = UIColor.blackColor()
-
-        self.inputTextView.layer.borderColor = ColorBlack.CGColor
-        self.inputTextView.layer.borderWidth = 1.0
-        self.inputTextView.layer.cornerRadius = 5.0
         self.inputTextView.delegate = self
 
         var tweetContent:String = ""
@@ -39,13 +38,13 @@ class DraftTweetViewController: UIViewController, UITextViewDelegate , UITextFie
         }
 
         self.inputTextView.text = tweetContent
-        self.stringCounterLabel.text = "\(140 - countElements(tweetContent))"
+        self.changeCounterValue(tweetContent)
         // Do any additional setup after loading the view.
+        self.inputTextView.becomeFirstResponder()
     }
 
     func textViewDidChange(textView: UITextView!){
-        var str = self.inputTextView.text
-        self.stringCounterLabel.text = "\(140 - countElements(str))"
+        self.changeCounterValue(self.inputTextView.text)
     }
 
     override func didReceiveMemoryWarning() {
