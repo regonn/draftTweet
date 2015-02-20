@@ -16,7 +16,6 @@ class DraftTweetTableViewController: UITableViewController, UITableViewDataSourc
     let tweetModel = TweetModel()
     var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
 
-
     
     override func viewDidLoad() {
         println("start")
@@ -66,7 +65,6 @@ class DraftTweetTableViewController: UITableViewController, UITableViewDataSourc
         cell.copyButton.addTarget(cell, action: "copyButtonTappedOnCell", forControlEvents: UIControlEvents.TouchDown)
         cell.copyButton.addTarget(self, action: "showAlert", forControlEvents: UIControlEvents.TouchDown)
         cell.editButton.addTarget(cell, action: "editButtonTappedOnCell", forControlEvents: UIControlEvents.TouchDown)
-        cell.deleteButton.addTarget(cell, action: "deleteButtonTappedOnCell", forControlEvents: UIControlEvents.TouchDown)
         return cell
     }
     
@@ -138,5 +136,11 @@ class DraftTweetTableViewController: UITableViewController, UITableViewDataSourc
         // Pass the selected object to the new view controller.
     }
     
-    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            var cell = tableView.cellForRowAtIndexPath(indexPath) as CustomTableViewCell
+            self.tweetModel.delete(cell.idNumberLabel.text!)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+        }
+    }
 }

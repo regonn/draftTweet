@@ -21,8 +21,7 @@ class CustomTableViewCell: UITableViewCell {
     
     @IBOutlet weak var editButton: UIButton!
     
-    @IBOutlet weak var deleteButton: UIButton!
-    
+
     @IBOutlet weak var idNumberLabel: UILabel!
     
     let alert:UIAlertController = UIAlertController(title:"alert",
@@ -45,9 +44,5 @@ class CustomTableViewCell: UITableViewCell {
         appDelegate.tweetContent = self.tweetContentLabel.text
         appDelegate.editMode = true
         appDelegate.idNumber = self.idNumberLabel.text
-    }
-    func deleteButtonTappedOnCell() {
-        println("delete")
-        tweetModel.delete(self.idNumberLabel.text!)
     }
 }

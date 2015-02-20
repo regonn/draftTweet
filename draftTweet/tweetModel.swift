@@ -67,11 +67,9 @@ class TweetModel {
                     var tweet :Tweet? = Tweet()
                     var content = row["Content"]?.asString()
                     var upDatedAt = row["UpdatedAt"]?.asString()
-                    println("show ID:\(id) CONTENT:\(content) UPDATEDAT:\(upDatedAt)")
                     tweet!.content = content!
                     tweet!.id = id
                     tweets.addObject(tweet!)
-                    println(tweet!)
                 }
             }
         }
