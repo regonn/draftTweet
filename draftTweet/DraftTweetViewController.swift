@@ -8,14 +8,15 @@
 
 import UIKit
 
-class DraftTweetViewController: UIViewController, UITextFieldDelegate {
+class DraftTweetViewController: UIViewController, UITextViewDelegate , UITextFieldDelegate{
 
-    @IBOutlet weak var inputTextField: UITextField!
 
     @IBOutlet weak var stringCounterLabel: UILabel!
     @IBOutlet weak var saveButton: UIBarButtonItem!
 
     @IBOutlet weak var cancelButton: UIBarButtonItem!
+
+    @IBOutlet weak var inputTextView: UITextView!
 
     var tweetModel = TweetModel()
     var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
@@ -23,17 +24,28 @@ class DraftTweetViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.inputTextField.delegate = self
-        self.inputTextField.placeholder = "Please input"
+        var ColorBlack = UIColor.blackColor()
+
+        self.inputTextView.layer.borderColor = ColorBlack.CGColor
+        self.inputTextView.layer.borderWidth = 1.0
+        self.inputTextView.layer.cornerRadius = 5.0
+        self.inputTextView.delegate = self
+
         var tweetContent:String = ""
         var tweetId:String = ""
         if appDelegate.editMode == true{
             tweetContent = appDelegate.tweetContent!
             tweetId = appDelegate.idNumber!
         }
-        self.inputTextField.text = tweetContent
+
+        self.inputTextView.text = tweetContent
         self.stringCounterLabel.text = "\(140 - countElements(tweetContent))"
         // Do any additional setup after loading the view.
+    }
+
+    func textViewDidChange(textView: UITextView!){
+        var str = self.inputTextView.text
+        self.stringCounterLabel.text = "\(140 - countElements(str))"
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,21 +56,16 @@ class DraftTweetViewController: UIViewController, UITextFieldDelegate {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    
-    @IBAction func editChange(sender: AnyObject) {
-        var str = self.inputTextField.text
-        self.stringCounterLabel.text = "\(140 - countElements(str))"
-    }
-    
+        
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if sender as? UIBarButtonItem != self.saveButton {
             return
         }
-        if countElements(self.inputTextField.text) > 0 {
+        if countElements(self.inputTextView.text) > 0 {
             if appDelegate.editMode == true{
-                tweetModel.update(appDelegate.idNumber!, content: self.inputTextField.text!)
+                tweetModel.update(appDelegate.idNumber!, content: self.inputTextView.text!)
             }else{
-                tweetModel.add(self.inputTextField.text)
+                tweetModel.add(self.inputTextView.text)
             }
         }
         // Get the new view controller using segue.destinationViewController.

@@ -21,7 +21,7 @@ class DraftTweetTableViewController: UITableViewController, UITableViewDataSourc
     override func viewDidLoad() {
         println("start")
         super.viewDidLoad()
-        self.tableView.rowHeight = 100
+        self.tableView.rowHeight = 150
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
