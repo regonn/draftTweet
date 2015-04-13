@@ -141,18 +141,17 @@ class DraftTweetTableViewController: UITableViewController, UITableViewDataSourc
         var cell = tableView.cellForRowAtIndexPath(indexPath) as CustomTableViewCell
         var deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Delete", handler: {
             (action: UITableViewRowAction!, indexPath: NSIndexPath!) in
-            println("Triggered delete action \(action) atIndexPath: \(indexPath)")
             self.tweetModel.delete(cell.idNumberLabel.text!)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
             return
         })
-        var copyAction = UITableViewRowAction(style: UITableViewRowActionStyle.Normal, title: "Copy", handler: {
+        var copyAction = UITableViewRowAction(style: UITableViewRowActionStyle.Normal, title: "Buffer", handler: {
             (action: UITableViewRowAction!, indexPath: NSIndexPath!) in
-            println("Triggered copy action \(action) atIndexPath: \(indexPath)")
-            UIPasteboard.generalPasteboard().string = cell.tweetContentLabel.text
-            self.showCopyAlert()
-            tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+            var bufferURL = "bufferapp://?t=\(cell.tweetContentLabel.text!)".stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())
+            println(bufferURL)
+            UIApplication.sharedApplication().openURL(NSURL(string: bufferURL!)!)
             return
+
         })
         return [deleteAction, copyAction]
     }

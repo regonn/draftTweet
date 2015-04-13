@@ -14,7 +14,6 @@
 		44E50BAC1A9629840090F25D /* Icon-Small-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44E50BA51A9629840090F25D /* Icon-Small-50@2x.png */; };
 		44E50BAD1A9629840090F25D /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 44E50BA61A9629840090F25D /* Icon.png */; };
 		44E50BAE1A9629840090F25D /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44E50BA71A9629840090F25D /* Icon@2x.png */; };
-		44EAA9AC1A9AC9FC00F3EA8F /* Icon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = 44EAA9AB1A9AC9FC00F3EA8F /* Icon-120.png */; };
 		44F5AA761A94550F002845F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F5AA751A94550F002845F3 /* AppDelegate.swift */; };
 		44F5AA781A94550F002845F3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F5AA771A94550F002845F3 /* ViewController.swift */; };
 		44F5AA7B1A94550F002845F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44F5AA791A94550F002845F3 /* Main.storyboard */; };
@@ -48,7 +47,6 @@
 		44E50BA51A9629840090F25D /* Icon-Small-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50@2x.png"; sourceTree = "<group>"; };
 		44E50BA61A9629840090F25D /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		44E50BA71A9629840090F25D /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
-		44EAA9AB1A9AC9FC00F3EA8F /* Icon-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-120.png"; sourceTree = "<group>"; };
 		44F5AA701A94550F002845F3 /* draftTweet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = draftTweet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44F5AA741A94550F002845F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44F5AA751A94550F002845F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -93,7 +91,6 @@
 			children = (
 				44E50BA11A9629840090F25D /* Icon-60.png */,
 				44E50BA21A9629840090F25D /* Icon-72.png */,
-				44EAA9AB1A9AC9FC00F3EA8F /* Icon-120.png */,
 				44E50BA31A9629840090F25D /* Icon-72@2x.png */,
 				44E50BA41A9629840090F25D /* Icon-Small-50.png */,
 				44E50BA51A9629840090F25D /* Icon-Small-50@2x.png */,
@@ -221,6 +218,7 @@
 					};
 					44F5AA841A94550F002845F3 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = ZZ47U4PG3J;
 						TestTargetID = 44F5AA6F1A94550F002845F3;
 					};
 				};
@@ -250,7 +248,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				44E50BAD1A9629840090F25D /* Icon.png in Resources */,
-				44EAA9AC1A9AC9FC00F3EA8F /* Icon-120.png in Resources */,
 				44F5AA7B1A94550F002845F3 /* Main.storyboard in Resources */,
 				44E50BAB1A9629840090F25D /* Icon-Small-50.png in Resources */,
 				44E50BAC1A9629840090F25D /* Icon-Small-50@2x.png in Resources */,
@@ -343,8 +340,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: 健太 田上 (AQDTKH3LUR)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 健太 田上 (AQDTKH3LUR)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: SONIC GARDEN INC.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: SONIC GARDEN INC.";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -364,7 +361,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "c0b453a9-05db-4ec8-b8a1-b72464fb3928";
+				PROVISIONING_PROFILE = "4dbe8ab5-6e87-40b3-a0d9-f5c510428c26";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -387,8 +384,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: 健太 田上 (AQDTKH3LUR)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 健太 田上 (AQDTKH3LUR)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: SONIC GARDEN INC.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: SONIC GARDEN INC.";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -401,7 +398,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "c0b453a9-05db-4ec8-b8a1-b72464fb3928";
+				PROVISIONING_PROFILE = "4dbe8ab5-6e87-40b3-a0d9-f5c510428c26";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -411,13 +408,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: 健太 田上 (AQDTKH3LUR)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 健太 田上 (AQDTKH3LUR)";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: SONIC GARDEN INC.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: SONIC GARDEN INC.";
 				CODE_SIGN_RESOURCE_RULES_PATH = "";
 				INFOPLIST_FILE = draftTweet/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c0b453a9-05db-4ec8-b8a1-b72464fb3928";
+				PROVISIONING_PROFILE = "a8885cf3-ec90-4052-bb65-f98baab82005";
 				SWIFT_OBJC_BRIDGING_HEADER = "Briding-Header.h";
 			};
 			name = Debug;
@@ -426,13 +424,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: 健太 田上 (AQDTKH3LUR)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 健太 田上 (AQDTKH3LUR)";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: SONIC GARDEN INC.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: SONIC GARDEN INC.";
 				CODE_SIGN_RESOURCE_RULES_PATH = "";
 				INFOPLIST_FILE = draftTweet/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c0b453a9-05db-4ec8-b8a1-b72464fb3928";
+				PROVISIONING_PROFILE = "a8885cf3-ec90-4052-bb65-f98baab82005";
 				SWIFT_OBJC_BRIDGING_HEADER = "Briding-Header.h";
 			};
 			name = Release;
@@ -441,6 +440,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -452,6 +453,7 @@
 				INFOPLIST_FILE = draftTweetTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/draftTweet.app/draftTweet";
 			};
 			name = Debug;
@@ -460,6 +462,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -467,6 +471,7 @@
 				INFOPLIST_FILE = draftTweetTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/draftTweet.app/draftTweet";
 			};
 			name = Release;
